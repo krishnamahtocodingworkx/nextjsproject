@@ -16,6 +16,9 @@ const Login = () => {
     console.log("form :", form);
     try {
       const res = await axios.post("/api/users/login", form);
+      if (res.data.success) {
+        router.push("/dashboard");
+      }
       console.log("Response :", res);
 
       // router.push("/login");
